@@ -1,0 +1,11 @@
+@mixin menu{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        border-bottom:solid;
+}
+@mixin ul{
+    display: flex;
+    justify-content: space-evenly;
+    padding: inherit;    
+}

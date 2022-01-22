@@ -1,0 +1,440 @@
+@import "stylegeneral";
+@import "variables";
+@import "mixins";
+@import "map";
+
+.mainMenu{
+    background-image:url(../images/fotofondo.jpg);
+    background-size: cover;
+    height: 250px;
+}
+
+header{
+    width: 100%;
+    backdrop-filter: blur(3px);
+    border-bottom: solid;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    label{
+        width: 60px;
+        height: 60px;
+        display: none;
+        padding: 10px;
+        &:hover{
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+        }
+    }
+    ul{
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    a{
+        display: block;
+        padding: 20px;
+        transition: all 0.5s;
+            &:hover{
+                transform: scale(1.15);
+                color: inherit;
+            }
+    }
+}
+#btn-menu{
+    display: none;
+} 
+.logo{
+    padding: 20px;
+    width: 150px;
+}
+
+/*Index*/
+.mainHome{
+    padding: inherit;
+        img{
+            max-width: 100%;
+            width: 500px;
+            border-radius: $borderRadius;
+        }
+        div p{
+            max-width: 100%;
+            width: 500px;
+        }
+        video{
+            z-index: -10;
+            padding-top: 40px;
+        }
+        p{
+            text-align: center;
+        }
+}
+
+/*Página Productos*/
+
+.mainProductos{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        a{
+            transition-property: transform, back-ground-color, color;
+            transition-duration: .5s;
+            color: inherit;
+                &:hover{
+                    transform: scale(1.15);
+                    color: inherit;
+                    transition-duration: .5s;
+                }
+        }
+}
+.galeria img{
+    border-radius: $borderRadius;
+    transition-property: transform;
+    transition-duration: 1s;
+        &:hover{
+            transform: scale(1.3);
+            transition-duration: 1s;
+        }
+}
+.separador {
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+
+.velas div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+.velasUno{
+    grid-row-start: span 2;
+}
+.velasDos{
+    @extend .velasUno;
+}
+.velasTres{
+    @extend .velasUno;
+}
+.velasCuatro{
+    @extend .velasUno;
+}
+.difusores div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+.difusorUno{
+    grid-row-start: span 2;
+    text-align: center;
+    
+}
+.difusorDos{
+    grid-row-start: span 2;
+}
+.hornitos{
+        div{
+            display: map-get($map: $estilos, $key: formato);
+            grid-template-columns: map-get($map: $estilos, $key: columnas);
+            align-items: map-get($map: $estilos, $key: aling);
+            justify-items: map-get($map: $estilos, $key: justificar);
+            gap: map-get($map: $estilos, $key: espacio);
+            padding-bottom: map-get($map: $estilos, $key: separacion);
+        }
+        h3{
+            grid-column-start: span 3;
+        }
+}
+.spray div{
+    display: map-get($map: $estilos, $key: formato);
+    grid-template-columns: map-get($map: $estilos, $key: columnas);
+    align-items: map-get($map: $estilos, $key: aling);
+    justify-items: map-get($map: $estilos, $key: justificar);
+    gap: map-get($map: $estilos, $key: espacio);
+    padding-bottom: map-get($map: $estilos, $key: separacion);
+}
+
+/*Página Nosotras*/
+
+.mainNosotras {
+    padding: inherit;
+        img{
+            border-radius: $borderRadius;
+            width: 100%;
+        }
+        h1{
+            text-align: center;
+        }
+}
+
+/*Página Aromas*/
+
+.mainAromas{
+    padding: inherit;
+        h1{
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            border-radius: $borderRadius;
+        }
+        ul{
+            text-align: center;
+            padding: inherit;
+        }
+        li{
+            transition: all 0.5s;
+            &:hover{
+                transform: scale(1.15);
+            }
+        }
+        p{
+            padding: 20px;
+            text-align: center;
+        }
+        .separador{
+            width: 80%;
+        }
+}
+.aromasUno{
+    animation-name: mover;
+    animation-duration: 1s;
+    position: relative;
+}
+.aromasDos{
+    animation-name: mover;
+    animation-duration: 1s;
+    position: relative;
+}
+
+@keyframes mover {
+    0% { width: 0%; height: 0;}
+    100% { width: 100%; height: 100%;}
+    
+}
+
+/*Página Contacto*/
+
+.mainContacto{
+    padding-bottom: 20px;
+}
+.contacto{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "formulario foto"
+    "formularioDos foto"
+    "formularioTres foto"
+    "formularioCuatro foto";
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+        .formulario{
+            grid-area: formulario;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            display: grid;
+            justify-items: center;
+        }
+        .formularioDos{
+            grid-area: formularioDos;
+        }
+        .formularioTres{
+            grid-area: formularioTres;
+            h4{
+                padding: 5px;
+                font-size: 35px;
+                margin: 0;
+            }
+        }
+        .formularioCuatro{
+            grid-area: formularioCuatro;
+        }
+        .imagenContacto{
+            grid-area: foto;
+            display: grid;
+            padding: 5px;
+            align-items: center;
+                img{
+                    width: 100%;
+                    border-radius: $borderRadius;
+                }
+        }
+        label{
+            padding: 5px;
+            font-size: 30px;
+        }
+        input{
+            color: black;
+            border: none;
+            background: none;
+            font-weight: bold;
+            border-bottom: solid 1px;
+            width: 80%;
+            padding: 5px;
+        }
+        textarea{
+            border: none;
+            background: none;
+            border-bottom: solid 1px;
+            width: 80%;
+            height: 140px;
+            padding: 5px;
+            font-weight: bold;
+        }
+}
+.botones{
+    text-transform: uppercase;
+    background-color: white !important;
+    margin: 5px;
+    border: none !important;
+}
+footer{
+    backdrop-filter: blur(3px);
+    border-top: solid;
+    color: $colorDos;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom:0;
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 10px;
+        }
+        p{
+            font-size: 14px;
+            height: 10px;
+        }
+}
+.instagram{
+    width: 45px;
+    padding-right: 10px;
+}
+
+@media (min-width: 1200px) {
+    .mainHome{
+        img{
+            width: 600px;
+        }
+        div p{
+            width: 600px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .contacto{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "formulario formulario"
+        "formularioDos formularioTres"
+        "formularioCuatro formularioCuatro"
+        "foto foto";
+    }
+}
+@media (max-width: 576px) {
+    p{
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+    .mainMenu nav{
+        margin-top: 600px;
+    }
+    header{
+        label{
+            display: block;
+        }
+        nav{
+            position: absolute;
+            margin-top: 500px;
+            margin-left: -200vh;
+            text-align: center;
+            background: rgba($color: #111111, $alpha: 0.8);
+            transition: all 0.5s;
+        }
+        ul{
+            flex-direction: column;
+        }
+        a{
+            color: white;
+            width: 84vh;
+        }
+    }
+    #btn-menu:checked ~ nav{
+        margin-left: 0;
+    }
+    .mainProductos h1{
+        text-align: center;
+    }
+    .galeria{
+        padding: 0;
+    }
+    .separador{
+        width: 100% !important;
+    }
+    .velas{
+        div{
+        grid-template-columns: repeat(1,1fr);
+        }
+        img{
+        width: 90%;
+        }
+    }
+    .difusores{
+        div{
+        grid-template-columns: repeat(1,1fr);
+        }
+        img{
+        width: 90%;;
+        }
+    }
+    .spray{
+        div{
+        grid-template-columns: repeat(1,1fr);
+        }
+        img{
+        width: 90%;
+        }
+    }
+    .hornitos{
+        div{
+        grid-template-columns: repeat(1,1fr);
+        }
+        h3{
+            grid-column-start: span 1;
+        }
+        img{
+        width: 90%;
+        }
+    }
+    .contacto{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-areas: "formulario"
+        "formularioDos"
+        "formularioTres"
+        "formularioCuatro"
+        "foto";
+    }
+}

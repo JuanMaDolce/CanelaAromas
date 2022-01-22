@@ -1,0 +1,484 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: "Thasadith", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  background-image: url(../images/fondogeneral.jpg);
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+div {
+  padding-top: 20px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h2 {
+  padding-top: 220px;
+  margin-top: -220px;
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.mainMenu {
+  background-image: url(../images/fotofondo.jpg);
+  background-size: cover;
+  height: 250px;
+}
+
+header {
+  width: 100%;
+  backdrop-filter: blur(3px);
+  border-bottom: solid;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+}
+header label {
+  width: 60px;
+  height: 60px;
+  display: none;
+  padding: 10px;
+}
+header label:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+header ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+header a {
+  display: block;
+  padding: 20px;
+  transition: all 0.5s;
+}
+header a:hover {
+  transform: scale(1.15);
+  color: inherit;
+}
+
+#btn-menu {
+  display: none;
+}
+
+.logo {
+  padding: 20px;
+  width: 150px;
+}
+
+/*Index*/
+.mainHome {
+  padding: inherit;
+}
+.mainHome img {
+  max-width: 100%;
+  width: 500px;
+  border-radius: 10px;
+}
+.mainHome div p {
+  max-width: 100%;
+  width: 500px;
+}
+.mainHome video {
+  z-index: -10;
+  padding-top: 40px;
+}
+.mainHome p {
+  text-align: center;
+}
+
+/*Página Productos*/
+.mainProductos {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+.mainProductos h1 {
+  text-align: center;
+}
+.mainProductos h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.mainProductos a {
+  transition-property: transform, back-ground-color, color;
+  transition-duration: 0.5s;
+  color: inherit;
+}
+.mainProductos a:hover {
+  transform: scale(1.15);
+  color: inherit;
+  transition-duration: 0.5s;
+}
+
+.galeria img {
+  border-radius: 10px;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+.galeria img:hover {
+  transform: scale(1.3);
+  transition-duration: 1s;
+}
+
+.separador {
+  display: block;
+  margin: auto;
+  padding: 20px;
+}
+
+.velas div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+.velasUno, .velasCuatro, .velasTres, .velasDos {
+  grid-row-start: span 2;
+}
+
+.difusores div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+.difusorUno {
+  grid-row-start: span 2;
+  text-align: center;
+}
+
+.difusorDos {
+  grid-row-start: span 2;
+}
+
+.hornitos div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.hornitos h3 {
+  grid-column-start: span 3;
+}
+
+.spray div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+/*Página Nosotras*/
+.mainNosotras {
+  padding: inherit;
+}
+.mainNosotras img {
+  border-radius: 10px;
+  width: 100%;
+}
+.mainNosotras h1 {
+  text-align: center;
+}
+
+/*Página Aromas*/
+.mainAromas {
+  padding: inherit;
+}
+.mainAromas h1 {
+  text-align: center;
+}
+.mainAromas img {
+  width: 100%;
+  border-radius: 10px;
+}
+.mainAromas ul {
+  text-align: center;
+  padding: inherit;
+}
+.mainAromas li {
+  transition: all 0.5s;
+}
+.mainAromas li:hover {
+  transform: scale(1.15);
+}
+.mainAromas p {
+  padding: 20px;
+  text-align: center;
+}
+.mainAromas .separador {
+  width: 80%;
+}
+
+.aromasUno {
+  animation-name: mover;
+  animation-duration: 1s;
+  position: relative;
+}
+
+.aromasDos {
+  animation-name: mover;
+  animation-duration: 1s;
+  position: relative;
+}
+
+@keyframes mover {
+  0% {
+    width: 0%;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+/*Página Contacto*/
+.mainContacto {
+  padding-bottom: 20px;
+}
+
+.contacto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "formulario foto" "formularioDos foto" "formularioTres foto" "formularioCuatro foto";
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.contacto .formulario {
+  grid-area: formulario;
+}
+.contacto h1 {
+  text-align: center;
+}
+.contacto form {
+  display: grid;
+  justify-items: center;
+}
+.contacto .formularioDos {
+  grid-area: formularioDos;
+}
+.contacto .formularioTres {
+  grid-area: formularioTres;
+}
+.contacto .formularioTres h4 {
+  padding: 5px;
+  font-size: 35px;
+  margin: 0;
+}
+.contacto .formularioCuatro {
+  grid-area: formularioCuatro;
+}
+.contacto .imagenContacto {
+  grid-area: foto;
+  display: grid;
+  padding: 5px;
+  align-items: center;
+}
+.contacto .imagenContacto img {
+  width: 100%;
+  border-radius: 10px;
+}
+.contacto label {
+  padding: 5px;
+  font-size: 30px;
+}
+.contacto input {
+  color: black;
+  border: none;
+  background: none;
+  font-weight: bold;
+  border-bottom: solid 1px;
+  width: 80%;
+  padding: 5px;
+}
+.contacto textarea {
+  border: none;
+  background: none;
+  border-bottom: solid 1px;
+  width: 80%;
+  height: 140px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.botones {
+  text-transform: uppercase;
+  background-color: white !important;
+  margin: 5px;
+  border: none !important;
+}
+
+footer {
+  backdrop-filter: blur(3px);
+  border-top: solid;
+  color: black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+footer section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10px;
+}
+footer p {
+  font-size: 14px;
+  height: 10px;
+}
+
+.instagram {
+  width: 45px;
+  padding-right: 10px;
+}
+
+@media (min-width: 1200px) {
+  .mainHome img {
+    width: 600px;
+  }
+  .mainHome div p {
+    width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .contacto {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "formulario formulario" "formularioDos formularioTres" "formularioCuatro formularioCuatro" "foto foto";
+  }
+}
+@media (max-width: 576px) {
+  p {
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .mainMenu nav {
+    margin-top: 600px;
+  }
+
+  header label {
+    display: block;
+  }
+  header nav {
+    position: absolute;
+    margin-top: 500px;
+    margin-left: -200vh;
+    text-align: center;
+    background: rgba(17, 17, 17, 0.8);
+    transition: all 0.5s;
+  }
+  header ul {
+    flex-direction: column;
+  }
+  header a {
+    color: white;
+    width: 84vh;
+  }
+
+  #btn-menu:checked ~ nav {
+    margin-left: 0;
+  }
+
+  .mainProductos h1 {
+    text-align: center;
+  }
+
+  .galeria {
+    padding: 0;
+  }
+
+  .separador {
+    width: 100% !important;
+  }
+
+  .velas div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .velas img {
+    width: 90%;
+  }
+
+  .difusores div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .difusores img {
+    width: 90%;
+  }
+
+  .spray div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .spray img {
+    width: 90%;
+  }
+
+  .hornitos div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .hornitos h3 {
+    grid-column-start: span 1;
+  }
+  .hornitos img {
+    width: 90%;
+  }
+
+  .contacto {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "formulario" "formularioDos" "formularioTres" "formularioCuatro" "foto";
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
